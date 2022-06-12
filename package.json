@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./script/webpack.dev.js",
+    "dev2": "nodemon ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "@reduxjs/toolkit": "^1.8.2",
+    "axios": "^0.27.2",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.3",
+    "koa": "^2.13.4",
+    "koa-router": "^10.1.1",
+    "node-eval": "^2.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "redux": "^4.2.0"
+  },
+  "devDependencies": {
+    "mini-css-extract-plugin": "^2.6.0",
+    "nodemon": "^2.0.16",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-merge": "^5.8.0"
+  }
+}
