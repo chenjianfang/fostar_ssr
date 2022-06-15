@@ -24,6 +24,7 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
     alias: {
       src: path.resolve(cwd, 'src'),
       pages: path.resolve(cwd, 'src/pages'),
@@ -37,6 +38,8 @@ module.exports = {
   //   'react-dom/server': 'ReactDOMServer',
   // },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name]/index.css'
+    }),
   ]
 }

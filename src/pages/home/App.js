@@ -7,7 +7,7 @@ function App(props) {
   }, [])
 
   return (
-    <div>{count}
+    <div id="App">{count}
       {
         props.menu.map((item) => <span key={item}>{item}</span>)
       }

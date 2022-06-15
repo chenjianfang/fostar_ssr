@@ -71,8 +71,11 @@ function webpackServer() {
                 type: 'commonjs'
             }
         },
+        resolve: {
+            extensions: ['.js', '.jsx'],
+        },
         externals: {
-            react: 'React',
+            // react: 'React',
             'react-dom/server': 'ReactDOMServer',
         },
     }, (err, stats) => {

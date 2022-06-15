@@ -12,10 +12,10 @@ function webpackPageClient(entryObj) {
   }, {
     target: 'web',
     output: {
-        filename: '[name].js',
-        path: outputPath,
-        publicPath: '',
-        clean: true,
+      filename: '[name]/index.js',
+      path: outputPath,
+      publicPath: '',
+      clean: true,
     },
     plugins: [
       new webpack.DefinePlugin({

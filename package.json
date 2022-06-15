@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./script/webpack.dev.js",
-    "dev2": "nodemon ./server.js"
+    "dev": "cross-env NODE_ENV=development node ./script/webpack.dev.js",
+    "start": "cross-env NODE_ENV=production node ./script/webpack.dev.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,12 +18,15 @@
     "glob": "^8.0.3",
     "koa": "^2.13.4",
     "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
     "node-eval": "^2.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "redux": "^4.2.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "nodemon": "^2.0.16",
     "webpack-bundle-analyzer": "^4.5.0",
