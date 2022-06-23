@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { hydrateRoot, createRoot } from 'react-dom/client';
-import App from './App';
+import { ServerProvider } from 'stores/server'
 import { post } from 'utils/http';
+import App from './App';
 import 'styles/home/index.css';
 
 async function getServerSideProps(context) {
@@ -15,12 +16,27 @@ async function getServerSideProps(context) {
 }
 
 if (process.env.IS_CLIENT) {
+  hydrateRoot(document.getElementById('root'), (
+    <ServerProvider value={{
+      ...window.SERVER_DATA
+    }}>
+      <App />
+    </ServerProvider>
+  ));
+}
 
-  hydrateRoot(document.getElementById('root'), <App {...window.SERVER_DATA} />);
+function serverRender({ props, req }) {
+  return ReactDOMServer.renderToString(
+    <ServerProvider value={{
+      req,
+      ...props
+    }}>
+      <App />
+    </ServerProvider>
+  )
 }
 
 export {
-  App,
-  ReactDOMServer,
+  serverRender,
   getServerSideProps,
 };

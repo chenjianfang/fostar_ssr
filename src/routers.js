@@ -14,7 +14,7 @@ router.get('(.*)', async (ctx, next) => {
     const hasPagePath = fse.pathExistsSync(pageFile);
 
     if (hasPagePath) {
-        const htmlStr = await render(pageFile);
+        const htmlStr = await render(pageFile, ctx);
         return ctx.body = htmlStr;
     } else {
         next();

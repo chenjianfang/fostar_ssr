@@ -31,6 +31,7 @@ module.exports = {
       styles: path.resolve(cwd, 'src/styles'),
       utils: path.resolve(cwd, 'src/utils'),
       common: path.resolve(cwd, 'src/common'),
+      stores: path.resolve(cwd, 'src/stores'),
     }
   },
   // externals: {

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
-function App(props) {
-  const [count, setCount] = useState(0);
+import React, { useContext } from 'react';
 
-  useEffect(() => {
-    console.log(4444)
-  }, [])
+import { serverContext } from 'stores/server';
+
+function App() {
+  const { menu } = useContext(serverContext);
 
   return (
-    <div id="App">{count}
+    <div id="App">111
       {
-        props.menu.map((item) => <span key={item}>{item}</span>)
+        menu.map((item) => <span key={item}>{item}</span>)
       }
+      <div>--------</div>
+      <div>--------</div>
     </div>
   );
 }
